@@ -1,0 +1,45 @@
+﻿<Page x:Class="pr2E.BooksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pr2E"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BooksPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Title: " VerticalAlignment="Center"/>
+            <TextBox x:Name="textTitle" Width="200" Margin="5"/>
+            <TextBlock Text="AuthorID: " VerticalAlignment="Center"/>
+            <TextBox x:Name="textAuthorID" Width="200" Margin="5"/>
+            <TextBlock Text="GenreID: " VerticalAlignment="Center"/>
+            <TextBox x:Name="textGenreID" Width="200" Margin="5"/>
+            <TextBlock Text="Year: " VerticalAlignment="Center"/>
+            <TextBox x:Name="textYear" Width="200" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+            <Button Content="Edit" Click="Edit_Click" Margin="5"/>
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+        </StackPanel>
+
+        <DataGrid x:Name="BD_Books" Grid.Row="2" AutoGenerateColumns="False" Margin="5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BookID" Binding="{Binding BookID}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="AuthorID" Binding="{Binding AuthorID}"/>
+                <DataGridTextColumn Header="GenreID" Binding="{Binding GenreID}"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
